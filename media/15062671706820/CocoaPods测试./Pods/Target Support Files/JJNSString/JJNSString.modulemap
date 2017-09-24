@@ -1,0 +1,6 @@
+framework module JJNSString {
+  umbrella header "JJNSString-umbrella.h"
+
+  export *
+  module * { export * }
+}

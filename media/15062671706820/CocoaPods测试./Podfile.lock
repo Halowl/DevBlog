@@ -1,0 +1,16 @@
+PODS:
+  - JJNSString (0.0.1)
+
+DEPENDENCIES:
+  - JJNSString (from `/Users/adobe/Library/Containers/com.coderforart.MWeb/Data/Documents/mainlib/docs/media/15062671706820/localLib./JJNSString`)
+
+EXTERNAL SOURCES:
+  JJNSString:
+    :path: "/Users/adobe/Library/Containers/com.coderforart.MWeb/Data/Documents/mainlib/docs/media/15062671706820/localLib./JJNSString"
+
+SPEC CHECKSUMS:
+  JJNSString: 73fc83b134c2da4d739f2267cdc15f76482a216e
+
+PODFILE CHECKSUM: c0236e165f86449ecb7acb6c88a00ce61edcc003
+
+COCOAPODS: 1.1.1
