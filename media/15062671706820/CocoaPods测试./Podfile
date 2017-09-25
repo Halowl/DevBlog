@@ -1,6 +1,0 @@
-platform :ios, '9.0'
-use_frameworks!
-target 'CocoaPods测试' do
-    pod 'JJNSString', :path => '/Users/adobe/Library/Containers/com.coderforart.MWeb/Data/Documents/mainlib/docs/media/15062671706820/localLib./JJNSString'
-# 把这里的路径换成你自己的
-end
