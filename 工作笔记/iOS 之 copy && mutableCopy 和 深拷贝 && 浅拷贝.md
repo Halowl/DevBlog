@@ -18,21 +18,122 @@
 #### example
 ![](media/14805623292132/15065055781915.jpg)
 
-- 不可变字符串
-	- 通过上图我们可以看出,在不可变字符串下,使用`copy`没有产生新对象
-	- 通过上图我们可以看出,在不可变字符串下,使用`mutableCopy`产生了新对象
+> 如上所示:可以得到以下结论
+- NSString
+	- copy
+		- 副本对象类型 : NSString
+		- 是否产生新对象 : 否
+		- 拷贝类型 : 浅拷贝(指针拷贝)
+	- mutableCopy
+		- 副本对象类型 : NSMutableString
+		- 是否产生新对象 : 是
+		- 拷贝类型 : 深拷贝(内容拷贝)
+		
+- NSMutableString
+	- copy
+		- 副本对象类型 : NSMutableString
+		- 是否产生新对象 : 是
+		- 拷贝类型 : 深拷贝(内容拷贝)
+	- mutableCopy
+		- 副本对象类型 : NSMutableString
+		- 是否产生新对象 : 是
+		- 拷贝类型 : 深拷贝(内容拷贝)
 
-- 可变字符串
-	- 通过上图我们可以看出,在可变字符串下,使用`copy`产生了新对象
-	- 通过上图我们可以看出,在可变字符串下,使用`mutableCopy`产生了新对象
 
 - 点到头文件中我们可以看出之所以我们可以使用`copy`和`mutableCopy`是因为我们遵守了`<NSCopying,NSMutableCopying>`协议
 ![](media/14805623292132/15065058193807.jpg)
 - 一些常用的数据类型,NSString,NSMutableString,NSArray,NSMutableArray.....等都可以使用`copy`跟`mutableCopy`,如果是我们自己对象,要使用`copy`和`mutableCopy`就需要遵守`<NSCopying,NSMutableCopying>`协议
 
+- 我们新建模型Cat,实现`copyWithZone:`和`mutableCopyWithZone`方法
+
+```
+#import <Foundation/Foundation.h>
+
+@interface Cat : NSObject<NSCopying,NSMutableCopying>
+
+@property (copy,nonatomic)NSString *name;
+@property (assign,nonatomic)NSInteger age;
+
+@end
+```
+
+
+```
+#import "Cat.h"
+
+@implementation Cat
+
+- (id)copyWithZone:(NSZone *)zone{
+    
+    Cat *cat = [[[self class] allocWithZone:zone]init];
+    cat.name = self.name;
+    cat.age = self.age;
+    return cat;
+}
+
+
+- (id)mutableCopyWithZone:(NSZone *)zone{
+    Cat *cat = [[[self class] allocWithZone:zone]init];
+    cat.name = self.name;
+    cat.age = self.age;
+    return cat;
+}
+
+@end
+```
+
+- 通过下面的打印我们可以看到
+
+![](media/14805623292132/15065075146822.jpg)
+
 
 
 ### @property 中的copy && strong
+> 在类的属性中,会用到`@property`关键字,那么如果是一个`NSString`类型的字符串,使用`strong`跟`copy`有什么区别呢?
+
+- 增加copy,strong
+
+```
+#import <Foundation/Foundation.h>
+
+@interface Cat : NSObject<NSCopying,NSMutableCopying>
+
+@property (copy,nonatomic)NSString *name;
+@property (assign,nonatomic)NSInteger age;
+@property (strong,nonatomic)NSString *strongName;
+
+@end
+```
+
+
+
+- example
+
+```
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+
+    NSMutableString *str = [NSMutableString stringWithFormat:@"ios"];
+    Cat *cat = [[Cat alloc]init];
+    cat.name = str;
+    cat.strongName = str;
+    
+    NSLog(@"cat.name==%@ - %p  cat.strongName==%@ - %p" ,cat.name,cat.name,cat.strongName,cat.strongName);
+    
+    [str appendString:@"ios"];
+    
+    NSLog(@"cat.name==%@ - %p  cat.strongName==%@ - %p" ,cat.name,cat.name,cat.strongName,cat.strongName);
+
+    
+}
+
+```
+
+![](media/14805623292132/15076084758766.jpg)
+
+- 综上所述,我们可以得出结论
+	- 在`@property`中,如果使用`strong`关键字,如果赋值给属性的值变了,属性的值也会跟着改变,使用`copy`刚不会因为属性的值的改变而改变
 
 
 
