@@ -19,6 +19,8 @@
 		981276631F99986500A7BFD0 /* PageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 981276621F99986500A7BFD0 /* PageView.m */; };
 		982DE18F1F9DC5D0009ADA93 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 982DE18E1F9DC5D0009ADA93 /* UIView+Extension.m */; };
 		982DE1B41FA2E503009ADA93 /* Read Me in Resources */ = {isa = PBXBuildFile; fileRef = 982DE1B31FA2E503009ADA93 /* Read Me */; };
+		982DE1B71FA731C7009ADA93 /* JJViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 982DE1B61FA731C7009ADA93 /* JJViewController.m */; };
+		982DE1BA1FA731D1009ADA93 /* KTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 982DE1B91FA731D1009ADA93 /* KTViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +45,10 @@
 		982DE18D1F9DC5D0009ADA93 /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
 		982DE18E1F9DC5D0009ADA93 /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
 		982DE1B31FA2E503009ADA93 /* Read Me */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Read Me"; sourceTree = "<group>"; };
+		982DE1B51FA731C7009ADA93 /* JJViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJViewController.h; sourceTree = "<group>"; };
+		982DE1B61FA731C7009ADA93 /* JJViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJViewController.m; sourceTree = "<group>"; };
+		982DE1B81FA731D0009ADA93 /* KTViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTViewController.h; sourceTree = "<group>"; };
+		982DE1B91FA731D1009ADA93 /* KTViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +86,10 @@
 				981276411F998F9500A7BFD0 /* AppDelegate.m */,
 				981276431F998F9500A7BFD0 /* ViewController.h */,
 				981276441F998F9500A7BFD0 /* ViewController.m */,
+				982DE1B51FA731C7009ADA93 /* JJViewController.h */,
+				982DE1B61FA731C7009ADA93 /* JJViewController.m */,
+				982DE1B81FA731D0009ADA93 /* KTViewController.h */,
+				982DE1B91FA731D1009ADA93 /* KTViewController.m */,
 				981276461F998F9500A7BFD0 /* Main.storyboard */,
 				981276491F998F9500A7BFD0 /* Assets.xcassets */,
 				9812764B1F998F9500A7BFD0 /* LaunchScreen.storyboard */,
@@ -188,6 +198,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				981276601F99984C00A7BFD0 /* ContentView.m in Sources */,
+				982DE1B71FA731C7009ADA93 /* JJViewController.m in Sources */,
 				981276631F99986500A7BFD0 /* PageView.m in Sources */,
 				9812765D1F99984000A7BFD0 /* TitleView.m in Sources */,
 				981276451F998F9500A7BFD0 /* ViewController.m in Sources */,
@@ -195,6 +206,7 @@
 				981276571F998FC900A7BFD0 /* PageControllerStyle.m in Sources */,
 				982DE18F1F9DC5D0009ADA93 /* UIView+Extension.m in Sources */,
 				9812763F1F998F9500A7BFD0 /* main.m in Sources */,
+				982DE1BA1FA731D1009ADA93 /* KTViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
